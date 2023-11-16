@@ -13,10 +13,12 @@
 		9945E4D82B029F750048D42D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9945E4D72B029F750048D42D /* Preview Assets.xcassets */; };
 		9945E4E02B029FDE0048D42D /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4DF2B029FDE0048D42D /* NutritionView.swift */; };
 		9945E4E22B02A3820048D42D /* HealthAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E12B02A3820048D42D /* HealthAppView.swift */; };
-		9945E4E42B02A4310048D42D /* HealthCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E32B02A4310048D42D /* HealthCategoryRow.swift */; };
+		9945E4E42B02A4310048D42D /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E32B02A4310048D42D /* CategoryDetailView.swift */; };
 		9945E4E62B02A7A90048D42D /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E52B02A7A90048D42D /* SummaryView.swift */; };
-		9945E4E82B02A7BD0048D42D /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E72B02A7BD0048D42D /* SharingView.swift */; };
 		9945E4EB2B02A85F0048D42D /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4EA2B02A85F0048D42D /* BrowseView.swift */; };
+		99C43E9F2B04CAC10090210A /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C43E9E2B04CAC10090210A /* ModalView.swift */; };
+		99C43EA12B04CEB60090210A /* ModalViewListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */; };
+		99C43EA32B04DEA10090210A /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C43EA22B04DEA10090210A /* SharingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +29,12 @@
 		9945E4D72B029F750048D42D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9945E4DF2B029FDE0048D42D /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
 		9945E4E12B02A3820048D42D /* HealthAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppView.swift; sourceTree = "<group>"; };
-		9945E4E32B02A4310048D42D /* HealthCategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCategoryRow.swift; sourceTree = "<group>"; };
+		9945E4E32B02A4310048D42D /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		9945E4E52B02A7A90048D42D /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		9945E4E72B02A7BD0048D42D /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
 		9945E4EA2B02A85F0048D42D /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		99C43E9E2B04CAC10090210A /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewListStruct.swift; sourceTree = "<group>"; };
+		99C43EA22B04DEA10090210A /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,9 @@
 				9945E4E92B02A8400048D42D /* Tab Views */,
 				9945E4D02B029F750048D42D /* HealthApp.swift */,
 				9945E4DF2B029FDE0048D42D /* NutritionView.swift */,
-				9945E4E32B02A4310048D42D /* HealthCategoryRow.swift */,
+				9945E4E32B02A4310048D42D /* CategoryDetailView.swift */,
 				9926E5662B0363CD004ED3BA /* Categories.swift */,
+				99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */,
 				9945E4D42B029F750048D42D /* Assets.xcassets */,
 				9945E4D62B029F750048D42D /* Preview Content */,
 			);
@@ -87,8 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				9945E4E52B02A7A90048D42D /* SummaryView.swift */,
-				9945E4E72B02A7BD0048D42D /* SharingView.swift */,
+				99C43EA22B04DEA10090210A /* SharingView.swift */,
 				9945E4EA2B02A85F0048D42D /* BrowseView.swift */,
+				99C43E9E2B04CAC10090210A /* ModalView.swift */,
 			);
 			path = "Tab Views";
 			sourceTree = "<group>";
@@ -166,10 +172,12 @@
 				9945E4E02B029FDE0048D42D /* NutritionView.swift in Sources */,
 				9926E5672B0363CD004ED3BA /* Categories.swift in Sources */,
 				9945E4E22B02A3820048D42D /* HealthAppView.swift in Sources */,
+				99C43EA32B04DEA10090210A /* SharingView.swift in Sources */,
 				9945E4EB2B02A85F0048D42D /* BrowseView.swift in Sources */,
 				9945E4E62B02A7A90048D42D /* SummaryView.swift in Sources */,
-				9945E4E82B02A7BD0048D42D /* SharingView.swift in Sources */,
-				9945E4E42B02A4310048D42D /* HealthCategoryRow.swift in Sources */,
+				99C43E9F2B04CAC10090210A /* ModalView.swift in Sources */,
+				99C43EA12B04CEB60090210A /* ModalViewListStruct.swift in Sources */,
+				9945E4E42B02A4310048D42D /* CategoryDetailView.swift in Sources */,
 				9945E4D12B029F750048D42D /* HealthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

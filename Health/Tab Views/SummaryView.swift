@@ -9,8 +9,33 @@
 import SwiftUI
 
 struct SummaryView: View {
+    @State var showModal: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+                ZStack {
+                    LinearGradient(gradient: Gradient(colors: [.mint, .pink.opacity(0.5), .white]), startPoint: .top, endPoint: .bottom)
+                        .ignoresSafeArea(.all)
+                }
+            Section {
+                List {
+                    
+                }
+            }
+                .navigationTitle("Summary")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            showModal.toggle()
+                        } label: {
+                            Image(systemName: "person.crop.circle.fill")
+                                .font(.title)
+                        
+                        }
+                    }
+                }
+                .sheet(isPresented: $showModal, content: {ModalView().presentationDetents([.large])})
+        }
     }
 }
 

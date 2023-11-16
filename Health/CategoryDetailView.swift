@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct HealthCategoryRow: View {
+struct CategoryDetailView: View {
+    var category: Category
     var categoryName: String
     var imageName: String
 
@@ -23,5 +24,5 @@ struct HealthCategoryRow: View {
 }
 
 #Preview {
-    HealthCategoryRow(categoryName: "Ok", imageName: "heart.fill")
+    CategoryDetailView(category: CategoryList.category.first!, categoryName: "Ok", imageName: "heart.fill")
 }
