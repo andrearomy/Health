@@ -13,28 +13,24 @@ struct SummaryView: View {
     var body: some View {
         
         NavigationStack {
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [.mint, .pink.opacity(0.5), .white]), startPoint: .top, endPoint: .bottom)
-                        .ignoresSafeArea(.all)
-                }
             Section {
                 List {
                     
                 }
             }
-                .navigationTitle("Summary")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            showModal.toggle()
-                        } label: {
-                            Image(systemName: "person.crop.circle.fill")
-                                .font(.title)
+            .navigationTitle("Summary")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showModal.toggle()
+                    } label: {
+                        Image(systemName: "person.crop.circle.fill")
+                            .font(.title)
                         
-                        }
                     }
                 }
-                .sheet(isPresented: $showModal, content: {ModalView().presentationDetents([.large])})
+            }
+            .sheet(isPresented: $showModal, content: {ModalView().presentationDetents([.large])})
         }
     }
 }

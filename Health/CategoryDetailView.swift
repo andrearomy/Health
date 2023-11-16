@@ -11,7 +11,7 @@ struct CategoryDetailView: View {
     var category: Category
     var categoryName: String
     var imageName: String
-
+    
     var body: some View {
         HStack {
             Image(systemName: imageName)

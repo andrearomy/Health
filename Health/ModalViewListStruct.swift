@@ -16,7 +16,7 @@ struct ModalViewListStruct: Identifiable {
 struct ModalList {
     
     static let modalList = [
-    ModalViewListStruct(name: "Health Details"),
-    ModalViewListStruct(name: "Medical ID")
+        ModalViewListStruct(name: "Health Details"),
+        ModalViewListStruct(name: "Medical ID")
     ]
 }

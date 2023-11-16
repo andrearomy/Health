@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99088B382B066AFB00A6EF69 /* NutritionElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088B372B066AFB00A6EF69 /* NutritionElements.swift */; };
 		9926E5672B0363CD004ED3BA /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926E5662B0363CD004ED3BA /* Categories.swift */; };
 		9945E4D12B029F750048D42D /* HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4D02B029F750048D42D /* HealthApp.swift */; };
 		9945E4D52B029F750048D42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9945E4D42B029F750048D42D /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99088B372B066AFB00A6EF69 /* NutritionElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionElements.swift; sourceTree = "<group>"; };
 		9926E5662B0363CD004ED3BA /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		9945E4CD2B029F750048D42D /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9945E4D02B029F750048D42D /* HealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthApp.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				9945E4DF2B029FDE0048D42D /* NutritionView.swift */,
 				9945E4E32B02A4310048D42D /* CategoryDetailView.swift */,
 				9926E5662B0363CD004ED3BA /* Categories.swift */,
+				99088B372B066AFB00A6EF69 /* NutritionElements.swift */,
 				99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */,
 				9945E4D42B029F750048D42D /* Assets.xcassets */,
 				9945E4D62B029F750048D42D /* Preview Content */,
@@ -173,6 +176,7 @@
 				9926E5672B0363CD004ED3BA /* Categories.swift in Sources */,
 				9945E4E22B02A3820048D42D /* HealthAppView.swift in Sources */,
 				99C43EA32B04DEA10090210A /* SharingView.swift in Sources */,
+				99088B382B066AFB00A6EF69 /* NutritionElements.swift in Sources */,
 				9945E4EB2B02A85F0048D42D /* BrowseView.swift in Sources */,
 				9945E4E62B02A7A90048D42D /* SummaryView.swift in Sources */,
 				99C43E9F2B04CAC10090210A /* ModalView.swift in Sources */,

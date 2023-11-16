@@ -9,15 +9,31 @@ import SwiftUI
 
 struct NutritionView: View {
     var category: Category
+    var elements: [NutritionElements] = ElementsList.element
     
     var body: some View {
         VStack {
-            Text("Nutrition Category")
-                .font(.title)
-                .padding()
-            // Add your nutrition content here
+            NavigationStack {
+                List{
+                    Section {
+                        ForEach(elements) { element in
+                            NavigationLink(destination: Text(""), label: {
+                                Text(element.name)
+                                    .font(.headline)
+                            })
+                        }
+                        
+                    } header: {
+                        Text("No Data Available")
+                            .padding(EdgeInsets(top: 0, leading: -18, bottom: 0, trailing: 0))
+                    }.headerProminence(.increased)
+                }.background(LinearGradient(gradient: Gradient(colors: [Color("Green nutrition"), Color("Gray background"), Color("Gray background"), Color("Gray background"), Color("Gray background"), Color("Gray background"), Color("Gray background")]), startPoint: .top, endPoint: .bottom))
+                    .scrollContentBackground(.hidden)
+                
+                    .navigationTitle("Nutrition")
+                    .environment(\.defaultMinListRowHeight, 65)
+            }
         }
-        .navigationTitle("Nutrition")
     }
 }
 

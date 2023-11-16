@@ -28,15 +28,16 @@ struct SharingView: View {
                             .font(.title)
                             .bold()
                             .padding(.vertical)
+                            .padding(.top, -20)
                         
                         VStack(alignment: .leading) {
                             HStack(spacing: 17.0) {
-                                    Image(systemName: "checklist")
-                                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                        .bold()
-                                        .foregroundStyle(.blue)
-                                        .frame(width: 30)
-                                        
+                                Image(systemName: "checklist")
+                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                    .bold()
+                                    .foregroundStyle(.blue)
+                                    .frame(width: 30)
+                                
                                 VStack(alignment: .leading) {
                                     Text("You're in Control")
                                         .font(.headline)
@@ -87,9 +88,9 @@ struct SharingView: View {
                                         .font(.callout)
                                         .foregroundStyle(.gray.opacity(0.9))
                                         .multilineTextAlignment(.leading)
-                                        
+                                    
                                 }
-            
+                                
                             }
                             .padding(.horizontal, 18.0)
                             .padding(.bottom)
@@ -123,12 +124,30 @@ struct SharingView: View {
                     }
                 }
                 Section {
-                    Text("Apps and Services")
-                    Text("Research Studies")
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Apps and Services")
+                    })
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Research Studies")
+                    })
                 }
-                Section {
+                
+            footer: {
+                VStack{
                     Text("Sharing With You")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(EdgeInsets(top: 30, leading: -80, bottom: 50, trailing: 0))
+                    
+                    VStack(alignment: .center){
+                        Text("No one is sharing data with you.")
+                            .padding(EdgeInsets(top: -40, leading: 40, bottom: 50, trailing: 0))
+                        
+                    }
+                    
                 }
+            }.headerProminence(.increased)
             }
             .navigationTitle("Sharing")
         }
