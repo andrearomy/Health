@@ -15,13 +15,14 @@ struct SharingView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            Image(systemName: "person.2.fill")
+                            Image(systemName: "person.2.fill").accessibilityHidden(true)
                                 .font(.custom("", size: 55))
                                 .padding(.top)
                                 .symbolRenderingMode(.palette)
                                 .foregroundStyle(
                                     .linearGradient(colors: [.purple, .cyan], startPoint: .leading, endPoint: .trailing),
                                     .linearGradient(colors: [.purple, .indigo], startPoint: .leading, endPoint: .trailing))
+                                
                             Spacer()
                         }
                         Text("Health Sharing")
@@ -32,7 +33,7 @@ struct SharingView: View {
                         
                         VStack(alignment: .leading) {
                             HStack(spacing: 17.0) {
-                                Image(systemName: "checklist")
+                                Image(systemName: "checklist").accessibilityHidden(true)
                                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                     .bold()
                                     .foregroundStyle(.blue)
@@ -51,7 +52,7 @@ struct SharingView: View {
                             
                             VStack(alignment: .leading) {
                                 HStack(spacing: 17.0) {
-                                    Image(systemName: "bell.badge.fill")
+                                    Image(systemName: "bell.badge.fill").accessibilityHidden(true)
                                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                         .bold()
                                         .foregroundStyle(.blue)
@@ -72,10 +73,11 @@ struct SharingView: View {
                             
                             HStack(spacing: 15.0) {
                                 VStack {
-                                    Image(systemName: "lock.fill")
+                                    Image(systemName: "lock.fill").accessibilityHidden(true)
                                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                         .bold()
                                         .foregroundStyle(.blue)
+                                        .frame(width: 29)
                                     
                                     
                                 }
@@ -83,6 +85,7 @@ struct SharingView: View {
                                 VStack(alignment: .leading) {
                                     Text("Private and Secure")
                                         .font(.headline)
+                
                                     
                                     Text("Only a summary of each topic is shared, not the details. The information is encrypted and you can stop sharing at any time.")
                                         .font(.callout)
@@ -131,13 +134,12 @@ struct SharingView: View {
                         Text("Research Studies")
                     })
                 }
-                
             footer: {
                 VStack{
-                    Text("Sharing With You")
+                    Text("Sharing With You").accessibilityAddTraits(.isHeader)
                         .font(.title2)
                         .fontWeight(.bold)
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color(.label))
                         .padding(EdgeInsets(top: 30, leading: -80, bottom: 50, trailing: 0))
                     
                     VStack(alignment: .center){

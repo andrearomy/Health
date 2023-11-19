@@ -14,89 +14,87 @@ struct ModalView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
-            VStack {
-                
-                Image(systemName: "person.crop.circle.fill")
-                    .font(.custom("", size: 80))
-                    .foregroundStyle(.blue)
-                    .padding(.bottom, 2)
-                
-                Text("Andrea Romano")
-                    .font(.title)
-                    .bold()
-                    .padding(.bottom, -10)
-                
-                List{
-                    ForEach(modalList) { modalList in
-                        
-                        
-                        NavigationLink(destination: Text(""), label: {
-                            Text(modalList.name)
-                        })
-                        
-                    }
+            ScrollView {
+                VStack {
                     
-                    Section {
-                        NavigationLink(destination: Text(""), label: {
-                            Text("Health Checklist")
-                        })
-                        NavigationLink(destination: Text(""), label: {
-                            Text("Notifications")
-                        })
-                    } header: {
-                        Text("Features")
-                            .font(.title2)
-                            .bold()
-                            .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
-                        
-                        
-                    }.headerProminence(.increased)
+                    Image(systemName: "person.crop.circle.fill").accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                        .font(.custom("", size: 80))
+                        .foregroundStyle(.blue)
+                        .padding(.bottom, 2)
                     
-                    Section {
-                        NavigationLink(destination: Text(""), label: {
-                            Text("Apps and Services")
-                        })
-                        NavigationLink(destination: Text(""), label: {
-                            Text("Research Studies")
-                        })
-                        NavigationLink(destination: Text(""), label: {
-                            Text("Devices")
-                        })
-                    } header: {
-                        Text("Privacy")
-                            .font(.title2)
-                            .bold()
-                            .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
-                        
-                        
-                    }.headerProminence(.increased)
+                    Text("Andrea Romano")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom, -10)
                     
-                    Section {
-                        Button {
-                            print("ciao")
-                        } label: {
-                            Text("Export All Health Data")
+                    List{
+                        ForEach(modalList) { modalList in
+                            
+                            
+                            NavigationLink(destination: Text(""), label: {
+                                Text(modalList.name)
+                            })
+                            
                         }
-                    }
-                }
-                Spacer()
-                
-                    .navigationTitle("")
-                    .toolbar(content: {
-                        ToolbarItem {
+                        
+                        Section {
+                            NavigationLink(destination: Text(""), label: {
+                                Text("Health Checklist")
+                            })
+                            NavigationLink(destination: Text(""), label: {
+                                Text("Notifications")
+                            })
+                        } header: {
+                            Text("Features")
+                                .font(.title2)
+                                .bold()
+                                .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
+                            
+                            
+                        }.headerProminence(.increased)
+                        
+                        Section {
+                            NavigationLink(destination: Text(""), label: {
+                                Text("Apps and Services")
+                            })
+                            NavigationLink(destination: Text(""), label: {
+                                Text("Research Studies")
+                            })
+                            NavigationLink(destination: Text(""), label: {
+                                Text("Devices")
+                            })
+                        } header: {
+                            Text("Privacy")
+                                .font(.title2)
+                                .bold()
+                                .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
+                            
+                            
+                        }.headerProminence(.increased)
+                        
+                        Section {
                             Button {
-                                dismiss()
+                                print("ciao")
                             } label: {
-                                Text("Done")
+                                Text("Export All Health Data")
                             }
                         }
-                    })
+                    }.frame(width: .infinity, height: 600)
+                    
+                      
+                        .toolbar(content: {
+                            ToolbarItem {
+                                Button {
+                                    dismiss()
+                                } label: {
+                                    Text("Done")
+                                }
+                            }
+                        })
+                }
             }
-            
-            
             .background(Color("Gray background"))
-        }.ignoresSafeArea()
-        
+        }
     }
 }
 

@@ -44,7 +44,7 @@ struct CategoryList {
         
         Category(name: "Vitals", symbol: "waveform.path.ecg.rectangle", color: .red),
         
-        Category(name: "Other Data", symbol: "cross.fill", color: .teal),
+        Category(name: "Other Data", symbol: "cross.fill", color: .blue),
         
     ]
 }

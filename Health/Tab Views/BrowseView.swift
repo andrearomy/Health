@@ -12,6 +12,7 @@ struct BrowseView: View {
     @State var showModal: Bool = false
     
     var categories: [Category] = CategoryList.category
+    
     @State private var searchTerm = ""
     
     var filteredCategories: [Category] {
@@ -31,6 +32,7 @@ struct BrowseView: View {
                                     Image(systemName: category.symbol)
                                         .font(.title)
                                         .foregroundStyle(category.color)
+                                        .symbolRenderingMode(.multicolor)
                                         .frame(width: 40)
                                     
                                     Text(category.name)
@@ -45,12 +47,11 @@ struct BrowseView: View {
                                     Image(systemName: category.symbol)
                                         .font(.title)
                                         .foregroundStyle(category.color)
+                                        .symbolRenderingMode(.multicolor)
                                         .frame(width: 40)
                                     
                                     Text(category.name)
                                         .font(.headline)
-                                    
-                                    
                                 }
                             })
                         }
@@ -66,7 +67,7 @@ struct BrowseView: View {
                 }.headerProminence(.increased)
                 Section {
                     HStack {
-                        Image(systemName: "list.clipboard")
+                        Image(systemName: "list.clipboard").accessibilityHidden(true)
                             .font(.title)
                             .frame(width: 35)
                             .symbolRenderingMode(.multicolor)
@@ -75,8 +76,7 @@ struct BrowseView: View {
                             Text("Clinical Documents")
                                 .font(.headline)
                         })
-                        
-                    }
+                    }.accessibilityElement(children: .combine)
                 }
             }
             .environment(\.defaultMinListRowHeight, 65)
@@ -88,15 +88,14 @@ struct BrowseView: View {
                     } label: {
                         Image(systemName: "person.crop.circle.fill")
                             .font(.title)
-                        
-                        
-                        
-                    }
+                    }.accessibilityLabel("Profile")
                 }
             }
         }
         .sheet(isPresented: $showModal, content: {ModalView().presentationDetents([.large])})
         .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
+        
+        
     }
 }
 

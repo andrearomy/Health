@@ -13,8 +13,56 @@ struct SummaryView: View {
     var body: some View {
         
         NavigationStack {
-            Section {
-                List {
+            List {
+                Section {
+                    VStack {
+                        HStack {
+                            Label("Sleep", systemImage: "bed.double.fill")
+                                .foregroundStyle(.mint)
+                            Spacer()
+                            Text("18 Nov")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }.padding(.bottom)
+                        
+                        VStack {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("Time In Bed")
+                                    
+                                    Text("... min")
+                                }.padding(.trailing, 220)
+                                
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Favourites")
+                        .font(.title2)
+                        .bold()
+                        .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
+                }.headerProminence(.increased)
+                Section {
+                    VStack {
+                        HStack {
+                            Label("Sleep", systemImage: "bed.double.fill")
+                                .foregroundStyle(.mint)
+                            Spacer()
+                            Text("18 Nov")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }.padding(.bottom)
+                        VStack {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("Time In Bed")
+                                    
+                                    Text("... min")
+                                }.padding(.trailing, 220)
+                                
+                            }
+                        }
+                    }
                     
                 }
             }
