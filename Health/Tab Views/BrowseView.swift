@@ -85,8 +85,16 @@ struct BrowseView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showModal.toggle()
-                    } label: {
-                        Image(systemName: "person.crop.circle.fill")
+                    } label: {Circle().foregroundStyle(.yellow)
+                            .frame(width: 40, height: 40)
+                            .overlay {
+                                Image("Profile")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .font(.system(size: 80))
+                                    .padding(.bottom, 2)
+                                    .padding(.top, 5)
+                            }
                             .font(.title)
                     }.accessibilityLabel("Profile")
                 }

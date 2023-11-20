@@ -72,9 +72,15 @@ struct SummaryView: View {
                     Button {
                         showModal.toggle()
                     } label: {
-                        Image(systemName: "person.crop.circle.fill")
-                            .font(.title)
-                        
+                        Circle().foregroundStyle(.yellow)
+                            .frame(width: 40, height: 40)
+                            .overlay {
+                                Image("Profile")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .font(.system(size: 80))
+                                    .padding(.bottom, 2)
+                                .padding(.top, 5) }
                     }
                 }
             }

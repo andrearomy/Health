@@ -6,97 +6,96 @@
 //
 
 import SwiftUI
-
 struct ModalView: View {
     
     var modalList: [ModalViewListStruct] = ModalList.modalList
     
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack {
-                    
-                    Image(systemName: "person.crop.circle.fill").accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        .font(.custom("", size: 80))
-                        .foregroundStyle(.blue)
-                        .padding(.bottom, 2)
-                    
-                    Text("Andrea Romano")
-                        .font(.title)
-                        .bold()
-                        .padding(.bottom, -10)
-                    
-                    List{
-                        ForEach(modalList) { modalList in
+        NavigationView {
+            List {
+                Section{
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Circle().shadow(radius: 1.5).foregroundStyle(.yellow)
+                                .frame(width: 110, height: 100)
+                                .overlay {
+                                    Image("Profile")
+                                        .resizable()
+                                        .frame(width: 115, height: 115)
+                                        .font(.system(size: 80))
+                                        .padding(.bottom, 2)
+                                        .padding(.top, 8)
+                                        .padding(.trailing, 3)
+                                }.accessibilityHidden(true)
                             
-                            
-                            NavigationLink(destination: Text(""), label: {
-                                Text(modalList.name)
-                            })
-                            
-                        }
-                        
-                        Section {
-                            NavigationLink(destination: Text(""), label: {
-                                Text("Health Checklist")
-                            })
-                            NavigationLink(destination: Text(""), label: {
-                                Text("Notifications")
-                            })
-                        } header: {
-                            Text("Features")
-                                .font(.title2)
+                            Text("Andrea Romano")
+                                .font(.title)
                                 .bold()
-                                .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
-                            
-                            
-                        }.headerProminence(.increased)
-                        
-                        Section {
-                            NavigationLink(destination: Text(""), label: {
-                                Text("Apps and Services")
-                            })
-                            NavigationLink(destination: Text(""), label: {
-                                Text("Research Studies")
-                            })
-                            NavigationLink(destination: Text(""), label: {
-                                Text("Devices")
-                            })
-                        } header: {
-                            Text("Privacy")
-                                .font(.title2)
-                                .bold()
-                                .padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0))
-                            
-                            
-                        }.headerProminence(.increased)
-                        
-                        Section {
-                            Button {
-                                print("ciao")
-                            } label: {
-                                Text("Export All Health Data")
-                            }
+                                .padding(.top)
+                                .padding(.bottom, -10)
                         }
-                    }.frame(width: .infinity, height: 600)
-                    
-                      
-                        .toolbar(content: {
-                            ToolbarItem {
-                                Button {
-                                    dismiss()
-                                } label: {
-                                    Text("Done")
-                                }
-                            }
+                        Spacer()
+                    }
+                    .padding(.vertical, 35)
+                }.listRowBackground(Color("Gray background"))
+                    .padding(.top, -30)
+                    .padding(.bottom, -30)
+                
+                Section {
+                    ForEach(modalList) { modalListItem in
+                        NavigationLink(destination: Text(""), label: {
+                            Text(modalListItem.name)
                         })
+                    }
+                }
+                
+                Section(header: Text("Features").padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0)).font(.title2).bold()) {
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Health Checklist")
+                    })
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Notifications")
+                    })
+                }.headerProminence(.increased)
+                
+                
+                Section(header: Text("Privacy").padding(EdgeInsets(top: 0, leading: -15, bottom: 0, trailing: 0)).font(.title2).bold()) {
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Apps and Services")
+                    })
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Research Studies")
+                    })
+                    NavigationLink(destination: Text(""), label: {
+                        Text("Devices")
+                    })
+                }.headerProminence(.increased)
+                
+                Section {
+                    Button {
+                        print("Export All Health Data")
+                    } label: {
+                        Text("Export All Health Data")
+                    }
                 }
             }
-            .background(Color("Gray background"))
+            .listStyle(.automatic)
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                    }
+                }
+            }
         }
     }
 }
+
 
 #Preview {
     ModalView()
