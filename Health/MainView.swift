@@ -3,6 +3,7 @@
 //  Health
 //
 //  Created by Andrea Romano on 21/11/23.
+//  Created by Andrea Romano on 21/11/2023.
 //
 
 import SwiftUI
@@ -13,20 +14,19 @@ struct MainView: View {
     @State var checkWelcomeScreen: Bool = false
     
     var body: some View {
-            VStack {
-                if checkWelcomeScreen {
-                    HealthAppView()
-                } else {
-                    LoginView(name: "", surname: "")
-                }
+        VStack {
+            if checkWelcomeScreen {
+                HealthAppView()
+            } else {
+                LoginView(name: "", surname: "")
             }
-            .onAppear {
-                checkWelcomeScreen = isWelcomeScreenOver
-            }
+        }
+        .onAppear {
+            checkWelcomeScreen = isWelcomeScreenOver
+        }
     }
 }
 
 #Preview {
     MainView()
 }
-

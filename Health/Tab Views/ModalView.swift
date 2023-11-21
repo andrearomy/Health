@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+
 struct ModalView: View {
     
     var modalList: [ModalViewListStruct] = ModalList.modalList

@@ -17,7 +17,7 @@
 		9945E4E42B02A4310048D42D /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E32B02A4310048D42D /* CategoryDetailView.swift */; };
 		9945E4E62B02A7A90048D42D /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4E52B02A7A90048D42D /* SummaryView.swift */; };
 		9945E4EB2B02A85F0048D42D /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945E4EA2B02A85F0048D42D /* BrowseView.swift */; };
-		997BEEDE2B0D3DEB0038E2BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997BEEDD2B0D3DEB0038E2BF /* MainView.swift */; };
+		99946B5A2B0D57C60055076B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99946B592B0D57C60055076B /* MainView.swift */; };
 		99C43E9F2B04CAC10090210A /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C43E9E2B04CAC10090210A /* ModalView.swift */; };
 		99C43EA12B04CEB60090210A /* ModalViewListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */; };
 		99C43EA32B04DEA10090210A /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C43EA22B04DEA10090210A /* SharingView.swift */; };
@@ -37,7 +37,7 @@
 		9945E4E32B02A4310048D42D /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		9945E4E52B02A7A90048D42D /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9945E4EA2B02A85F0048D42D /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
-		997BEEDD2B0D3DEB0038E2BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		99946B592B0D57C60055076B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		99C43E9E2B04CAC10090210A /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewListStruct.swift; sourceTree = "<group>"; };
 		99C43EA22B04DEA10090210A /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				9945E4E12B02A3820048D42D /* HealthAppView.swift */,
-				997BEEDD2B0D3DEB0038E2BF /* MainView.swift */,
 				9945E4E92B02A8400048D42D /* Tab Views */,
 				9945E4D02B029F750048D42D /* HealthApp.swift */,
 				99D51F892B0C9FA200C7C344 /* LoginView.swift */,
@@ -84,6 +83,7 @@
 				9945E4E32B02A4310048D42D /* CategoryDetailView.swift */,
 				9926E5662B0363CD004ED3BA /* Categories.swift */,
 				99088B372B066AFB00A6EF69 /* NutritionElements.swift */,
+				99946B592B0D57C60055076B /* MainView.swift */,
 				99C43EA02B04CEB60090210A /* ModalViewListStruct.swift */,
 				9945E4D42B029F750048D42D /* Assets.xcassets */,
 				9945E4D62B029F750048D42D /* Preview Content */,
@@ -182,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9945E4E02B029FDE0048D42D /* NutritionView.swift in Sources */,
-				997BEEDE2B0D3DEB0038E2BF /* MainView.swift in Sources */,
+				99946B5A2B0D57C60055076B /* MainView.swift in Sources */,
 				9926E5672B0363CD004ED3BA /* Categories.swift in Sources */,
 				9945E4E22B02A3820048D42D /* HealthAppView.swift in Sources */,
 				99C43EA32B04DEA10090210A /* SharingView.swift in Sources */,
