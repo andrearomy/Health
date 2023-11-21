@@ -140,15 +140,15 @@ struct SharingView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(Color(.label))
-                        .padding(EdgeInsets(top: 30, leading: -80, bottom: 50, trailing: 0))
-                    
-                    VStack(alignment: .center){
-                        Text("No one is sharing data with you.")
-                            .padding(EdgeInsets(top: -40, leading: 40, bottom: 50, trailing: 0))
                         
-                    }
                     
-                }
+                    
+                    Text("No one is sharing data with you.").padding(.leading, 45).padding(.top, 1)
+                            
+                        
+                    
+                    
+                }.padding(EdgeInsets(top: 20, leading: -48, bottom: 50, trailing: 0))
             }.headerProminence(.increased)
             }
             .navigationTitle("Sharing")

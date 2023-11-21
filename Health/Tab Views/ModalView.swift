@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 struct ModalView: View {
     
     var modalList: [ModalViewListStruct] = ModalList.modalList
     
     @Environment(\.dismiss) var dismiss
+    @Query var userData: [User]
     
     var body: some View {
         NavigationView {
@@ -30,8 +32,8 @@ struct ModalView: View {
                                         .padding(.top, 8)
                                         .padding(.trailing, 3)
                                 }.accessibilityHidden(true)
-                            
-                            Text("Andrea Romano")
+                        
+                            Text("\(userData[0].name) \(userData[0].surname)")
                                 .font(.title)
                                 .bold()
                                 .padding(.top)

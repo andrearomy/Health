@@ -17,7 +17,8 @@ struct SummaryView: View {
                 Section {
                     VStack {
                         HStack {
-                            Label("Sleep", systemImage: "bed.double.fill")
+                            Image(systemName: "bed.double.fill").foregroundStyle(.mint)
+                            Text("Sleep")
                                 .foregroundStyle(.mint)
                             Spacer()
                             Text("18 Nov")
@@ -28,10 +29,10 @@ struct SummaryView: View {
                         VStack {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Text("Time In Bed")
+                                    Text("Time In Bed").font(.subheadline).foregroundStyle(.gray)
                                     
                                     Text("... min")
-                                }.padding(.trailing, 220)
+                                }.padding(.trailing, 232)
                                 
                             }
                         }
@@ -45,26 +46,64 @@ struct SummaryView: View {
                 Section {
                     VStack {
                         HStack {
-                            Label("Sleep", systemImage: "bed.double.fill")
-                                .foregroundStyle(.mint)
+                            Image(systemName: "flame.fill").foregroundStyle(.red)
+                            Text("Steps")
+                                .foregroundStyle(.red)
                             Spacer()
-                            Text("18 Nov")
+                            Text("20:44")
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                         }.padding(.bottom)
                         VStack {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Text("Time In Bed")
                                     
-                                    Text("... min")
-                                }.padding(.trailing, 220)
+                                    HStack {
+                                        Text("...")
+                                        Text("steps")
+                                    }
+                                }.padding(.trailing, 245)
                                 
                             }
                         }
                     }
                     
+                }.listSectionSpacing(12)
+                Section {
+                    Text("").background(Image("hearing")).frame(width: 9000, height: 180)
+                    VStack(alignment: .leading) {
+                        Text("Why Hearing Health Matters").font(.title2).bold()
+                        Text("Get insight into your hearing and how to look after it.").font(.callout)
+                    }
+                } header: {
+                    Text("Articles")
+                        .font(.title2)
+                        .bold()
+                        .padding(EdgeInsets(top: 25, leading: -15, bottom: -10, trailing: 0))
+                }.headerProminence(.increased)
+                Section {
+                    Text("").background(Image("walking")).frame(width: 100, height: 180)
+                    VStack(alignment: .leading) {
+                        Text("Understanding Walking Steadiness").font(.title2).bold()
+                        Text("What it is and why you should pay attention to it.").font(.callout)
+                    }
+                }.listSectionSpacing(12)
+                Section {
+                    Text("").background(Image("cardio")).frame(width: 5000, height: 180)
+                    VStack(alignment: .leading) {
+                        Text("Learn About Cardio Fitness").font(.title2).bold()
+                        Text("How it's measured, why it matters and how to improve yours.").font(.callout)
+                    }
                 }
+                .listSectionSpacing(12)
+                Section {
+                    Text("").background(Image("respiratory")).frame(width: 3000, height: 180)
+                    VStack(alignment: .leading) {
+                        Text("Learn About Your Respiratory Rate").font(.title2).bold()
+                        Text("Why you might breathe faster or slower.").font(.callout)
+                    }
+                }
+                .listSectionSpacing(12)
             }
             .navigationTitle("Summary")
             .toolbar {
