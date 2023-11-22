@@ -57,7 +57,7 @@ struct SummaryView: View {
                                 HStack {
                                     VStack(alignment: .leading) {
                                         HStack {
-                                            Text("873 steps").font(.headline).foregroundStyle(.gray)
+                                            Text("873 steps").font(.headline).foregroundStyle(.black)
                                             Spacer()
                                         }
                                         
