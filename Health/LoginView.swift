@@ -21,94 +21,108 @@ struct LoginView: View {
     @State var isPressed: Bool = false
     
     var body: some View {
-        NavigationView{
-                VStack {
-                    Circle().shadow(radius: 1.5).foregroundStyle(.yellow)
-                        .frame(width: 110, height: 100)
-                        .overlay {
-                            Image("Profile")
-                                .resizable()
-                                .frame(width: 115, height: 115)
-                                .font(.system(size: 80))
-                                .padding(.bottom, 2)
-                                .padding(.top, 8)
-                                .padding(.trailing, 3)
-                        }
-                    
-                    Text("Set up Health Details")
-                        .font(.title)
-                        .bold()
-                        .padding()
-                    Text("Your health details are the basic information the app needs to provide you with relevant information.")
-                        .font(.headline)
-                        .fontWeight(.regular)
-                        .multilineTextAlignment(.center)
-                        .frame(width: 350)
-                        .padding(.top, 20)
-                        .padding(.bottom, 50)
-                    
-                    Divider()
-                    HStack{
-                        Text("First Name").bold()
-                        TextField("Name", text: $name)
-                            .padding(.leading, 20)
-                    }.padding(.leading, 20)
-                        .padding(.bottom)
-                        .padding(.top)
-                    
-                    Divider()
-                    
-                    HStack{
-                        Text("Last Name").bold()
-                        TextField("Surname", text: $surname)
-                            .padding(.leading, 20)
-                    }.padding(.leading, 20)
-                        .padding(.bottom)
-                        .padding(.top)
-                    
-                    Divider().padding(.bottom, 50)
-                    
-                    HStack(spacing: 80) {
-                        
-                        Button(action: {
-                            isPressed = true
-                            isWelcomeScreenOver = true
-                        }, label: {
-                            VStack {
-                                ZStack {
-                                    Rectangle().frame(height: 50).cornerRadius(20)
-                                    
-                                    Text("Save Data")
-                                        .font(.custom("", size: 20))
-                                        .padding()
-                                        .foregroundColor(.white)
-                                        .onTapGesture {
-                                            modelContext.insert(User(name: name, surname: surname))
-                                            isButtonClicked = true
-                                            showAlert = true
-                                        }
-                                        .alert(isPresented: $showAlert) {
-                                            Alert(title: Text("Saved!"))
-                                        }
-                                }.padding(.bottom, 5)
-                                ZStack {
-                                    Rectangle().frame(height: 50).cornerRadius(20)
-                                    
-                                    Text("Next")
-                                        .font(.system(size: 20))
-                                        .foregroundStyle(.white)
-                                }
-                            }
-                        })
-                    }
-                    NavigationLink(destination: HealthAppView().navigationBarHidden(true),
-                                   isActive: $isPressed) { EmptyView() }
+        NavigationView {
+            VStack {
+                Circle().shadow(radius: 1.5).foregroundStyle(.yellow)
+                    .frame(width: 110, height: 100)
+                    .overlay {
+                        Image("Profile")
+                            .resizable()
+                            .frame(width: 115, height: 115)
+                            .font(.system(size: 80))
+                            .padding(.bottom, 2)
+                            .padding(.top, 8)
+                            .padding(.trailing, 3)
+                    }.accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                
+                Text("Set up Health Details")
+                    .font(.title)
+                    .bold()
+                    .padding()
+                Text("Your health details are the basic information the app needs to provide you with relevant information.")
+                    .font(.headline)
+                    .fontWeight(.regular)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 350)
+                    .padding(.top, 20)
+                    .padding(.bottom, 50)
+                
+                Divider()
+                HStack {
+                    Text("First Name").bold()
+                    TextField("Required", text: $name)
+                        .accessibilityRemoveTraits(.isStaticText)
+                        .padding(.leading, 20)
                 }
-                .padding(.all)
+                .padding(.leading, 20)
+                .padding(.bottom)
+                .padding(.top)
+                
+                Divider()
+                
+                HStack {
+                    Text("Last Name").bold()
+                    TextField("Required", text: $surname)
+                        .accessibilityRemoveTraits(.isStaticText)
+                        .padding(.leading, 20)
+                }
+                .padding(.leading, 20)
+                .padding(.bottom)
+                .padding(.top)
+                
+                Divider().padding(.bottom, 50)
+                
+                VStack(spacing: 20) {
+                    Button(action: {
+                        modelContext.insert(User(name: name, surname: surname))
+                        isButtonClicked = true
+                        showAlert = true
+                    }, label: {
+                        ZStack {
+                            Rectangle().foregroundStyle(.red)
+                                .frame(height: 50)
+                                .cornerRadius(20)
+                            
+                            Text("Save Data").accessibilityHint("Tap to save the data you put in the TextField.")
+                                .font(.custom("", size: 20))
+                                .padding()
+                                .foregroundColor(.white)
+                                .alert(isPresented: $showAlert) {
+                                    Alert(title: Text("Saved!"))
+                                }
+                        }
+                    })
+                    .padding(.bottom, 5)
+                    
+                    Button(action: {
+                        isPressed = true
+                        isWelcomeScreenOver = true
+                    }, label: {
+                        ZStack {
+                            Rectangle().foregroundColor(.blue)
+                                .frame(height: 50)
+                                .cornerRadius(20)
+                            
+                            Text("Next")
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                        }
+                    })
+                    .disabled(name.isEmpty || surname.isEmpty)
+                }
+                .padding(.horizontal, 10)
+                
+                NavigationLink(destination: HealthAppView().navigationBarHidden(true),
+                               isActive: $isPressed) { EmptyView() }
+            }
+            .padding(.all)
         }
     }
 }
 
+
+
 #Preview {
     LoginView(name: "", surname: "")
 }
+

@@ -2,7 +2,6 @@
 //  MainView.swift
 //  Health
 //
-//  Created by Andrea Romano on 21/11/23.
 //  Created by Andrea Romano on 21/11/2023.
 //
 

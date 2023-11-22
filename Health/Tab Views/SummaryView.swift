@@ -25,18 +25,16 @@ struct SummaryView: View {
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                         }.padding(.bottom)
-                        
                         VStack {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Text("Time In Bed").font(.subheadline).foregroundStyle(.gray)
-                                    
-                                    Text("... min")
-                                }.padding(.trailing, 232)
-                                
+                                    HStack {
+                                        Text("No Data").font(.headline).foregroundStyle(.gray)
+                                    }
+                                }.padding(.leading, -155)
                             }
                         }
-                    }
+                    }.accessibilityElement(children: .combine)
                 } header: {
                     Text("Favourites")
                         .font(.title2)
@@ -57,20 +55,17 @@ struct SummaryView: View {
                         VStack {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    
                                     HStack {
-                                        Text("...")
-                                        Text("steps")
+                                        Text("873 steps")
                                     }
-                                }.padding(.trailing, 245)
-                                
+                                }.padding(.leading, -155)
                             }
                         }
-                    }
+                    }.accessibilityElement(children: .combine)
                     
                 }.listSectionSpacing(12)
                 Section {
-                    Text("").background(Image("hearing")).frame(width: 9000, height: 180)
+                    Text("").background(Image("hearing").accessibilityHidden(true)).frame(width: 9000, height: 180).accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     VStack(alignment: .leading) {
                         Text("Why Hearing Health Matters").font(.title2).bold()
                         Text("Get insight into your hearing and how to look after it.").font(.callout)
@@ -82,14 +77,14 @@ struct SummaryView: View {
                         .padding(EdgeInsets(top: 25, leading: -15, bottom: -10, trailing: 0))
                 }.headerProminence(.increased)
                 Section {
-                    Text("").background(Image("walking")).frame(width: 100, height: 180)
+                    Text("").background(Image("walking").accessibilityHidden(true)).frame(width: 100, height: 180).accessibilityHidden(true)
                     VStack(alignment: .leading) {
                         Text("Understanding Walking Steadiness").font(.title2).bold()
                         Text("What it is and why you should pay attention to it.").font(.callout)
                     }
                 }.listSectionSpacing(12)
                 Section {
-                    Text("").background(Image("cardio")).frame(width: 5000, height: 180)
+                    Text("").background(Image("cardio").accessibilityHidden(true)).frame(width: 5000, height: 180).accessibilityHidden(true)
                     VStack(alignment: .leading) {
                         Text("Learn About Cardio Fitness").font(.title2).bold()
                         Text("How it's measured, why it matters and how to improve yours.").font(.callout)
@@ -97,7 +92,7 @@ struct SummaryView: View {
                 }
                 .listSectionSpacing(12)
                 Section {
-                    Text("").background(Image("respiratory")).frame(width: 3000, height: 180)
+                    Text("").background(Image("respiratory").accessibilityHidden(true)).frame(width: 3000, height: 180).accessibilityHidden(true)
                     VStack(alignment: .leading) {
                         Text("Learn About Your Respiratory Rate").font(.title2).bold()
                         Text("Why you might breathe faster or slower.").font(.callout)
