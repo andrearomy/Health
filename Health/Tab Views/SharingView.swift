@@ -41,10 +41,11 @@ struct SharingView: View {
                                 
                                 VStack(alignment: .leading) {
                                     Text("You're in Control")
-                                        .font(.headline)
+                                        .font(.subheadline)
+                                        .fontWeight(.medium)
                                     
                                     Text("Keep friends and family up to date on how you're doing by securely sharing your Health data.")
-                                        .font(.callout)
+                                        .font(.subheadline)
                                         .foregroundStyle(.gray.opacity(0.9))
                                 }
                             }.padding(.horizontal)
@@ -61,10 +62,11 @@ struct SharingView: View {
                                     
                                     VStack(alignment: .leading) {
                                         Text("Dashboard and Notifications")
-                                            .font(.headline)
+                                            .font(.callout)
+                                            .fontWeight(.medium)
                                         
                                         Text("Data you share will appear in their Health app. They can also get notifications if there's an update.")
-                                            .font(.callout)
+                                            .font(.subheadline)
                                             .foregroundStyle(.gray.opacity(0.9))
                                     }
                                 }.padding(.horizontal)
@@ -84,11 +86,12 @@ struct SharingView: View {
                                 
                                 VStack(alignment: .leading) {
                                     Text("Private and Secure")
-                                        .font(.headline)
+                                        .font(.callout)
+                                        .fontWeight(.medium)
                 
                                     
                                     Text("Only a summary of each topic is shared, not the details. The information is encrypted and you can stop sharing at any time.")
-                                        .font(.callout)
+                                        .font(.subheadline)
                                         .foregroundStyle(.gray.opacity(0.9))
                                         .multilineTextAlignment(.leading)
                                     

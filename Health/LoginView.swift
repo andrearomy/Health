@@ -19,6 +19,7 @@ struct LoginView: View {
     @AppStorage("isWelcomeScreenOver") var isWelcomeScreenOver = false
     @Environment(\.dismiss) var dismiss
     @State var isPressed: Bool = false
+    @State private var isDataSaved: Bool = false
     
     var body: some View {
         NavigationView {
@@ -77,6 +78,7 @@ struct LoginView: View {
                         modelContext.insert(User(name: name, surname: surname))
                         isButtonClicked = true
                         showAlert = true
+                        isDataSaved = true
                     }, label: {
                         ZStack {
                             Rectangle().foregroundStyle(.red)
@@ -108,7 +110,7 @@ struct LoginView: View {
                                 .foregroundColor(.white)
                         }
                     })
-                    .disabled(name.isEmpty || surname.isEmpty)
+                    .disabled(name.isEmpty || surname.isEmpty || !isDataSaved)
                 }
                 .padding(.horizontal, 10)
                 
