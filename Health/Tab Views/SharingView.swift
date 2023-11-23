@@ -22,7 +22,7 @@ struct SharingView: View {
                                 .foregroundStyle(
                                     .linearGradient(colors: [.purple, .cyan], startPoint: .leading, endPoint: .trailing),
                                     .linearGradient(colors: [.purple, .indigo], startPoint: .leading, endPoint: .trailing))
-                                
+                            
                             Spacer()
                         }
                         Text("Health Sharing")
@@ -41,7 +41,7 @@ struct SharingView: View {
                                 
                                 VStack(alignment: .leading) {
                                     Text("You're in Control")
-                                        .font(.subheadline)
+                                        .font(.callout)
                                         .fontWeight(.medium)
                                     
                                     Text("Keep friends and family up to date on how you're doing by securely sharing your Health data.")
@@ -88,7 +88,7 @@ struct SharingView: View {
                                     Text("Private and Secure")
                                         .font(.callout)
                                         .fontWeight(.medium)
-                
+                                    
                                     
                                     Text("Only a summary of each topic is shared, not the details. The information is encrypted and you can stop sharing at any time.")
                                         .font(.subheadline)
@@ -143,14 +143,8 @@ struct SharingView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(Color(.label))
-                        
-                    
                     
                     Text("No one is sharing data with you.").padding(.leading, 45).padding(.top, 1)
-                            
-                        
-                    
-                    
                 }.padding(EdgeInsets(top: 20, leading: -48, bottom: 50, trailing: 0))
             }.headerProminence(.increased)
             }
